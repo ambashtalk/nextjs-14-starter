@@ -4,10 +4,10 @@ export class ContentService {
   private static instance: ContentService;
   private cmsClient: CMSClient;
 
-   // Private constructor to prevent direct instantiation
-   private constructor() {
-     // Initialize your service here
-     this.cmsClient = CMSClient.getInstance()
+  // Private constructor to prevent direct instantiation
+  private constructor() {
+    // Initialize your service here
+    this.cmsClient = CMSClient.getInstance();
   }
 
   // Static method to get the single instance of the class
@@ -19,7 +19,6 @@ export class ContentService {
   }
 
   public getHeaderSection() {
-    
+    return this.cmsClient.getEntry(HOME_PAGE.ID, [HOME_PAGE.HEADER_SECTION.ID]);
   }
-
 }
