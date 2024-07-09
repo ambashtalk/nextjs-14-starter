@@ -1,13 +1,15 @@
-import CMSClient from "../clients/cms-client";
+import HttpClient from "@common/clients/http-client";
+import { BasePageResponse } from "@common/models/base-page-response";
+import { HomePageModelType } from "@common/models/home-page-model";
 
-export class ContentService {
+export default class ContentService {
     private static instance: ContentService;
-    private cmsClient: CMSClient;
+    private httpClient: HttpClient;
 
     // Private constructor to prevent direct instantiation
     private constructor() {
         // Initialize your service here
-        this.cmsClient = CMSClient.getInstance();
+        this.httpClient = HttpClient.getInstance()
     }
 
     // Static method to get the single instance of the class
@@ -18,9 +20,7 @@ export class ContentService {
         return ContentService.instance;
     }
 
-    public getHeaderSection() {
-        return this.cmsClient.getEntry(HOME_PAGE.ID, [
-            HOME_PAGE.HEADER_SECTION.ID,
-        ]);
+    public getHeaderSection(): Promise<BasePageResponse<HomePageModelType>> {
+        return this.httpClient.get("/api/v1/home/header-section")
     }
 }

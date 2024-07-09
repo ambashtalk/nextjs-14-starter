@@ -40,7 +40,7 @@ abstract class BaseClient {
     }
 
     // Example GET method
-    protected async get<T>(
+    public async get<T>(
         url: string,
         params?: Record<string, unknown>,
     ): Promise<T> {
@@ -59,7 +59,7 @@ abstract class BaseClient {
     }
 
     // Example POST method
-    protected async post<T>(url: string, data: unknown): Promise<T> {
+    public async post<T>(url: string, data: unknown): Promise<T> {
         try {
             const response: AxiosResponse<T> = await this.axiosInstance.post(
                 url,
@@ -73,7 +73,7 @@ abstract class BaseClient {
     }
 
     // Example PUT method
-    protected async put<T>(url: string, data: unknown): Promise<T> {
+    public async put<T>(url: string, data: unknown): Promise<T> {
         try {
             const response: AxiosResponse<T> = await this.axiosInstance.put(
                 url,
@@ -87,7 +87,7 @@ abstract class BaseClient {
     }
 
     // Example DELETE method
-    protected async delete<T>(url: string): Promise<T> {
+    public async delete<T>(url: string): Promise<T> {
         try {
             const response: AxiosResponse<T> =
                 await this.axiosInstance.delete(url);

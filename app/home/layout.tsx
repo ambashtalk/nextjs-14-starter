@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { Header } from "@common/components/header";
 
 export const metadata: Metadata = {
     title: "Title from CMS",
@@ -11,7 +12,9 @@ type LayoutProps = {
 export default function PageLayout({ children }: LayoutProps) {
     return (
         <>
-            <header>Header</header>
+            <header>
+                <Header />
+            </header>
             <main>
                 <div>Main</div>
                 <div>{children}</div>

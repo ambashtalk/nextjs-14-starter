@@ -1,6 +1,10 @@
+"use server";
+
 import BaseClient from "./base-client";
 import { InternalAxiosRequestConfig } from "axios";
-import { convertSectionIdsToQueryParam } from "../utils";
+import { convertSectionIdsToQueryParam } from "@common/utils";
+import { BasePageResponse } from "@common/models/base-page-response";
+import { HomePageModelType } from "@common/models/home-page-model";
 
 class CMSClient extends BaseClient {
     private static instance: CMSClient;
@@ -32,7 +36,7 @@ class CMSClient extends BaseClient {
     }
 
     public getEntry(pageId: string, sectionIds: string[]) {
-        return this.get(
+        return this.get<BasePageResponse<HomePageModelType>>(
             `api/${pageId}`,
             convertSectionIdsToQueryParam(sectionIds),
         );
