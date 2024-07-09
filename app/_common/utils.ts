@@ -1,23 +1,23 @@
 export function convertSectionIdToQueryParam(id: string) {
-  let queryParamName = "populate";
+    let queryParamName = "populate";
 
-  if (id != null) {
-    const fields = id.split(".");
-    for (const field of fields) {
-      queryParamName += `[${field}][populate]`;
+    if (id != null) {
+        const fields = id.split(".");
+        for (const field of fields) {
+            queryParamName += `[${field}][populate]`;
+        }
     }
-  }
 
-  return { [queryParamName]: "*" };
+    return { [queryParamName]: "*" };
 }
 
 export function convertSectionIdsToQueryParam(ids: string[]) {
-  let queryParams = {};
-  ids.forEach((sectionId) => {
-    queryParams = {
-      ...queryParams,
-      ...convertSectionIdToQueryParam(sectionId),
-    };
-  });
-  return queryParams;
+    let queryParams = {};
+    ids.forEach((sectionId) => {
+        queryParams = {
+            ...queryParams,
+            ...convertSectionIdToQueryParam(sectionId),
+        };
+    });
+    return queryParams;
 }
