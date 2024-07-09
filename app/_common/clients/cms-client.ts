@@ -30,7 +30,7 @@ class CMSClient extends BaseClient {
   }
 
   public getEntry(pageId: string, sectionIds: string[]) {
-    this.get(`api/${pageId}`, convertSectionIdsToQueryParam(sectionIds));
+    return this.get(`api/${pageId}`, convertSectionIdsToQueryParam(sectionIds));
   }
 }
 

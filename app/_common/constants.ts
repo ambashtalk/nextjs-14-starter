@@ -1,4 +1,4 @@
-const HOME_PAGE = {
+export const HOME_PAGE = {
   ID: "home-page",
   HEADER_SECTION: { ID: "headerSection" },
   HERO_IMAGE: { ID: "heroImage" },

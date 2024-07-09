@@ -15,6 +15,7 @@ export function convertSectionIdsToQueryParam(ids: string[]) {
   let queryParams = {};
   ids.forEach((sectionId) => {
     queryParams = {
+      ...queryParams,
       ...convertSectionIdToQueryParam(sectionId),
     };
   });
