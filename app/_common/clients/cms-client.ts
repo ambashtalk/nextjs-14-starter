@@ -4,7 +4,7 @@ import BaseClient from "./base-client";
 import { InternalAxiosRequestConfig } from "axios";
 import { convertSectionIdsToQueryParam } from "@common/utils";
 import { BasePageResponse } from "@common/models/base-page-response";
-import { HomePageModelType } from "@common/models/home-page-model";
+import { HomePageModelType } from "@/app/_common/models/types/home-page-model";
 
 class CMSClient extends BaseClient {
     private static instance: CMSClient;
@@ -35,8 +35,8 @@ class CMSClient extends BaseClient {
         return CMSClient.instance;
     }
 
-    public getEntry(pageId: string, sectionIds: string[]) {
-        return this.get<BasePageResponse<HomePageModelType>>(
+    public getEntry<T>(pageId: string, sectionIds: string[]) {
+        return this.get<BasePageResponse<T>>(
             `api/${pageId}`,
             convertSectionIdsToQueryParam(sectionIds),
         );

@@ -1,57 +1,16 @@
-import {
-    BannerType,
-    CMSImageType,
-    CMSTextType,
-    FaqType,
-    FooterType,
-    GalleryType,
-    HeaderType,
-    ImageType,
-    InputType,
-    TextType,
-} from "@common/components/cms-component";
+import ContentService from "../services/content-service"
+import {HomePageModelType} from "./types/home-page-model-type"
 
-export type HeaderSectionModel = HeaderType
+class HomePageModel {
+    private homePage: HomePageModelType| null
+    private contentService: ContentService
 
-export type HeroSectionModel = {
-    heroImage: ImageType;
-    heroTitle: TextType;
-};
+    constructor() {
+        this.contentService = ContentService.getInstance()
+        this.homePage = null
+    }
 
-export type LeadFormSectionModel = {
-    header: CMSTextType;
-    name: InputType;
-    phone: InputType;
-    email: InputType;
-    submit: InputType;
-};
-
-export type HighlightSectionModel = {
-    icon: CMSImageType;
-    text: TextType;
-}[];
-
-export type GallerySectionModel = GalleryType
-
-export type GalleryBannerModel = BannerType
-
-export type FaqSectionModel = FaqType
-
-export type FaqBannerModel = BannerType
-
-export type FooterSectionModel = FooterType
-
-
-export type HomePageModelType = {
-    title: string;
-    locale: string
-    headerSection: HeaderSectionModel;
-    heroSection: HeroSectionModel;
-    leadForm: LeadFormSectionModel;
-    highlights: HighlightSectionModel;
-    gallerySection: GallerySectionModel;
-    galleryBanner: GalleryBannerModel;
-    faqSection: FaqSectionModel;
-    faqBanner: FaqBannerModel;
-    footerSection: FooterSectionModel;
-};
+    getHomePage() {
+        const cmsResponse = this.contentService.getHeaderSection()
+    }
+}

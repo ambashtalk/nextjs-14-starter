@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import ContentService from "@common/services/content-service";
-import { HeaderSectionModel } from "@common/models/home-page-model";
+import { HeaderSectionModel } from "@common/models/types/home-page-model-type";
 
 const useHeaderSection = () => {
-    const [headerSection, setHeaderSection] = useState<HeaderSectionModel|null>(null);
+    const [data, setData] = useState<HeaderSectionModel | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
         ContentService.getInstance().getHeaderSection()
             .then((response) => {
-                setHeaderSection(response.data.headerSection);
+                setData(response.data);
                 setLoading(false);
             })
             .catch((err) => {
@@ -19,7 +19,7 @@ const useHeaderSection = () => {
             });
     }, []);
 
-    return { headerSection, loading, error };
+    return { data, loading, error };
 };
 
 export default useHeaderSection;

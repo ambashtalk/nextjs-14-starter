@@ -1,6 +1,7 @@
 import HttpClient from "@common/clients/http-client";
-import { BasePageResponse } from "@common/models/base-page-response";
-import { HomePageModelType } from "@common/models/home-page-model";
+import { BasePageResponse } from "@common/models/types/base-page-response-type";
+import { HeaderSectionModel, HomePageModelType } from "@common/models/types/home-page-model-type";
+import { CMSHeaderSectionResponse } from "../clients/response/home-page-response";
 
 export default class ContentService {
     private static instance: ContentService;
@@ -20,7 +21,7 @@ export default class ContentService {
         return ContentService.instance;
     }
 
-    public getHeaderSection(): Promise<BasePageResponse<HomePageModelType>> {
+    public getHeaderSection(): Promise<BasePageResponse<HeaderSectionModel>> {
         return this.httpClient.get("/api/v1/home/header-section")
     }
 }
