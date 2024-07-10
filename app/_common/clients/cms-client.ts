@@ -3,8 +3,7 @@
 import BaseClient from "./base-client";
 import { InternalAxiosRequestConfig } from "axios";
 import { convertSectionIdsToQueryParam } from "@common/utils";
-import { BasePageResponse } from "@common/models/base-page-response";
-import { HomePageModelType } from "@/app/_common/models/types/home-page-model";
+import { BasePageResponse } from "@common/models/types/base-page-response-type";
 
 class CMSClient extends BaseClient {
     private static instance: CMSClient;
