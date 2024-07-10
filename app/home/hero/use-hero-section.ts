@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ContentService from "@common/services/content-service";
-import { HeroSectionModel } from "@common/models/types/home-page-model-type";
+import { HeroSectionModel } from "@common/models/home-page-model";
 
 export const useHeroSection = () => {
     const [data, setData] = useState<HeroSectionModel | null>(null);

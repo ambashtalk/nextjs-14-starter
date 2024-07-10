@@ -1,4 +1,4 @@
-import { HeaderSectionModel } from "../../models/types/home-page-model-type";
+import { HeaderSectionModel } from "../../models/home-page-model";
 
 interface Props {
     data: HeaderSectionModel | null;

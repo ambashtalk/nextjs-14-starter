@@ -1,4 +1,4 @@
-import { HeroSectionModel } from "@common/models/types/home-page-model-type";
+import { HeroSectionModel } from "@common/models/types/home-page-model";
 
 interface Props {
     data: HeroSectionModel | null;

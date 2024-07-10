@@ -1,6 +1,6 @@
 import { CMSHeroSectionResponse } from "@common/clients/response/home-page-response";
-import { BasePageResponse } from "@common/models/types/base-page-response-type";
-import { HeroSectionModel } from "@common/models/types/home-page-model-type";
+import { BasePageResponse } from "@common/models/types/base-page-response";
+import { HeroSectionModel } from "@common/models/types/home-page-model";
 import CMSClient from "@common/clients/cms-client";
 import { HOME_PAGE } from "@common/constants";
 

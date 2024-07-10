@@ -1,6 +1,6 @@
 import HttpClient from "@common/clients/http-client";
-import { BasePageResponse } from "@common/models/types/base-page-response-type";
-import { HeaderSectionModel, HeroSectionModel, HomePageModelType } from "@common/models/types/home-page-model-type";
+import { BasePageResponse } from "@common/models/types/base-page-response";
+import { HeaderSectionModel, HeroSectionModel, HomePageModelType } from "@common/models/types/home-page-model";
 import { CMSHeaderSectionResponse } from "../clients/response/home-page-response";
 
 export default class ContentService {

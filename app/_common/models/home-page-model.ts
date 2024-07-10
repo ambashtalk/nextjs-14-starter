@@ -1,16 +1,76 @@
-import ContentService from "../services/content-service"
-import {HomePageModelType} from "./types/home-page-model-type"
+import {
+    BannerType,
+    CMSImageType,
+    CMSTextType,
+    FaqType,
+    FooterType,
+    GalleryType,
+    HeaderType,
+    ImageType,
+    InputType,
+    TextType,
+} from "@common/components/cms-component";
 
-class HomePageModel {
-    private homePage: HomePageModelType| null
-    private contentService: ContentService
+export type CommonData = {
+    title: string;
+    locale: string;
+};
 
-    constructor() {
-        this.contentService = ContentService.getInstance()
-        this.homePage = null
-    }
+export type HeaderSectionModel = CommonData & {
+    headerSection: HeaderType;
+};
 
-    getHomePage() {
-        const cmsResponse = this.contentService.getHeaderSection()
-    }
-}
+export type HeroSectionModel = CommonData & {
+    heroSection: {
+        heroImage: ImageType;
+        heroTitle: TextType;
+    };
+};
+
+export type LeadFormSectionModel = CommonData & {
+    leadForm: {
+        header: CMSTextType;
+        name: InputType;
+        phone: InputType;
+        email: InputType;
+        submit: InputType;
+    };
+};
+
+export type HighlightSectionModel = CommonData & {
+    highlights: {
+        icon: CMSImageType;
+        text: TextType;
+    }[];
+};
+
+export type GallerySectionModel = {
+    gallerySection: GalleryType;
+};
+
+export type GalleryBannerModel = {
+    galleryBanner: BannerType;
+};
+
+export type FaqSectionModel = {
+    faqSection: FaqType;
+};
+
+export type FaqBannerModel = {
+    faqBanner: BannerType;
+};
+
+export type FooterSectionModel = {
+    footerSection: FooterType;
+};
+
+export type HomePageModelType = CommonData &
+    HeaderSectionModel &
+    HeroSectionModel &
+    LeadFormSectionModel &
+    HighlightSectionModel &
+    GallerySectionModel &
+    GalleryBannerModel &
+    FaqSectionModel &
+    FaqBannerModel &
+    FooterSectionModel;
