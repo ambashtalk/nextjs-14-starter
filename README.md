@@ -1,6 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
+This project uses starapi backend from https://github.com/ambashtalk/strapi-v4-starter. This project contains some custom component types defined and a HomePage Single Type. You need to add data to this page. The page and field ids are defined in constants.ts file.
 
 First, run the development server:
 
