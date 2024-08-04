@@ -7,6 +7,8 @@ export type CMSImageType = {
     url: string;
     alternativeText?: string;
     caption?: string;
+    height: number | null;
+    width: number | null;
 };
 
 // CMS Common Components

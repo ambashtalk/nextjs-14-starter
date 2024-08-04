@@ -1,3 +1,5 @@
+export const isDev = !(process.env.NODE_ENV === "production");
+
 export function convertSectionIdToQueryParam(id: string) {
     let queryParamName = "populate";
 

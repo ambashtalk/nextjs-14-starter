@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { Header } from "@common/components/header";
 
 export const metadata: Metadata = {
-    title: "Title from CMS",
+    title: "Home",
 };
 
 type LayoutProps = {
@@ -15,11 +15,12 @@ export default function PageLayout({ children }: LayoutProps) {
             <header>
                 <Header />
             </header>
-            <main>
-                <div>Main</div>
-                <div>{children}</div>
+            <main className="bg-gray-50">
+                <div className="container mx-auto">{children}</div>
             </main>
-            <footer>Footer</footer>
+            <footer className="bg-blue-950 text-white">
+                <div className="container mx-auto">Footer</div>
+            </footer>
         </>
     );
 }

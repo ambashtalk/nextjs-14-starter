@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import ContentService from "@common/services/content-service";
-import { HeaderSectionModel } from "@common/models/types/home-page-model";
+import { HeaderSectionModel } from "@common/models/home-page-model";
 
 export const useHeaderSection = () => {
-    const [data, setData] = useState<HeaderSectionModel | null>(null);
+    const [data, setData] = useState<HeaderSectionModel>();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
